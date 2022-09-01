@@ -1,11 +1,11 @@
 // Company Data
 const indian9IT = [
   {
-    name: 'Tata Consultancy Services',
-    code: 'tcs',
-    revenue: 1524970,
+    name: 'Bình Chánh - BC',
+    code: 'bcbc',
+    revenue: 63530,
     marketCap: 8453370,
-    employees: 420000,
+    employees: 3725,
     salesGrowth: 10.47,
     color: 'salmon',
     fb: 730890,
@@ -13,11 +13,11 @@ const indian9IT = [
     li: 4639844
   },
   {
-    name: 'Infosys',
-    code: 'infosys',
-    revenue: 873710,
+    name: 'Bình Hưng - BC',
+    code: 'bhbc',
+    revenue: 151560,
     marketCap: 2820280,
-    employees: 228000,
+    employees: 6080,
     salesGrowth: 9.81,
     color: 'coral',
     fb: 853447,
@@ -25,11 +25,11 @@ const indian9IT = [
     li: 3330921
   },
   {
-    name: 'HCL Technologies',
-    code: 'hcl',
-    revenue: 656430,
+    name: 'Hưng Long - BC',
+    code: 'bchl',
+    revenue: 132200,
     marketCap: 1533700,
-    employees: 150000,
+    employees: 3500,
     salesGrowth: 24.74,
     color: 'khaki',
     fb: 1415863,
@@ -37,11 +37,11 @@ const indian9IT = [
     li: 2042198
   },
   {
-    name: 'Wipro',
-    code: 'wipro',
-    revenue: 601370,
+    name: 'An Phú Tây - BC',
+    code: 'bcapt',
+    revenue: 276000,
     marketCap: 1530430,
-    employees: 160000,
+    employees: 5715,
     salesGrowth: 4.82,
     color: 'turquoise',
     fb: 1446866,
@@ -49,11 +49,11 @@ const indian9IT = [
     li: 3115578
   },
   {
-    name: 'Tech Mahindra',
-    code: 'mahindra',
-    revenue: 351190,
+    name: 'Đa Phước - BC',
+    code: 'bcdp',
+    revenue: 31100,
     marketCap: 701410,
-    employees: 125700,
+    employees: 8447,
     salesGrowth: 9.45,
     color: 'deepskyblue',
     fb: 131903,
@@ -61,11 +61,11 @@ const indian9IT = [
     li: 1629563
   },
   {
-    name: 'L & T Infotech',
-    code: 'landt',
-    revenue: 100140,
+    name: 'Tân Phong - Q7',
+    code: '7tp',
+    revenue: 83240,
     marketCap: 293020,
-    employees: 31500,
+    employees: 3150,
     salesGrowth: 17.34,
     color: 'violet',
     fb: 59883,
@@ -73,11 +73,11 @@ const indian9IT = [
     li: 675820
   },
   {
-    name: 'Mphasis',
-    code: 'mphasis',
-    revenue: 79730,
+    name: 'Phường 5 - Q8',
+    code: '8p5',
+    revenue: 27740,
     marketCap: 177380,
-    employees: 22000,
+    employees: 2200,
     salesGrowth: 8.33,
     color: 'lightpink',
     fb: 15213,
@@ -85,28 +85,16 @@ const indian9IT = [
     li: 313362
   },
   {
-    name: 'Mindtree',
-    code: 'mindtree',
-    revenue: 73750,
+    name: 'Phường 12 - Quận Bình Thạnh',
+    code: 'BT12',
+    revenue: 60590,
     marketCap: 118550,
-    employees: 21000,
+    employees: 2100,
     salesGrowth: 14.54,
     color: 'mistyrose',
     fb: 57914,
     tw: 82800,
     li: 432892
-  },
-  {
-    name: 'Hexaware Technologies',
-    code: 'hexaware',
-    revenue: 53060,
-    marketCap: 101650,
-    employees: 18300,
-    salesGrowth: 14.17,
-    color: 'navajowhite',
-    fb: 68095,
-    tw: 9191,
-    li: 246766
   }
 ];
 // Company info
@@ -117,13 +105,13 @@ list.on('click', (event) => {
       // General info
       d3.select('#company').html(`Company: <span>${company.name}</span>`);
       d3.select('#revenue').node().innerHTML =
-        `Revenue (INR Mn): <span>${company.revenue.toLocaleString()}</span>`;
+        `Rainfall (INR Mn): <span>${company.revenue.toLocaleString()}</span>`;
       d3.select('#marketcap').node().innerHTML =
-        `Market Cap (INR Mn): <span>${company.marketCap.toLocaleString()}</span>`;
+        `Population (INR Mn): <span>${company.marketCap.toLocaleString()}</span>`;
       d3.select('#employees').node().innerHTML =
-        `Employees: <span>${company.employees.toLocaleString()}</span>`;
+        `Dengue Case: <span>${company.employees.toLocaleString()}</span>`;
       d3.select('#salesgrowth').node().innerHTML =
-        `Sales Growth (3-year): <span>${company.salesGrowth}%</span>`;
+        `Approdiate (3-year): <span>${company.salesGrowth}%</span>`;
       // Social info
       d3.select('#fb h2').node().innerText = 'Facebook';
       d3.select('#fb p').node().innerText = company.fb;
@@ -174,11 +162,11 @@ function updateRevenueChart(companies) {
   if (companies.length == 0) {
     resetTitle('#revenuechart');
     resetChart('#revenuechart');
-    resetChartText('#revenuechart');
+    // resetChartText('#revenuechart');
   } else {
-    setTitle('#revenuechart', 'Revenue (INR Mn)');
-    setVerticalBars('#revenuechart', companies, 8, 'revenue');
-    setVerticalBarText('#revenuechart', companies, 'revenue');
+    setTitle('#revenuechart', 'Rainfall Day (mm)');
+    setVerticalBars('#revenuechart', companies, 1, 'revenue');
+    // setVerticalBarText('#revenuechart', companies, 'revenue');
   }
 }
 
@@ -187,11 +175,11 @@ function updateMarketCapChart(companies) {
   if (companies.length == 0) {
     resetTitle('#marketcapchart');
     resetChart('#marketcapchart');
-    resetChartText('#marketcapchart');
+    // resetChartText('#marketcapchart');
   } else {
-    setTitle('#marketcapchart', 'Market Cap (INR Mn)');
+    setTitle('#marketcapchart', 'Rainfall Week (mm)');
     setVerticalBars('#marketcapchart', companies, 42, 'marketCap');
-    setVerticalBarText('#marketcapchart', companies, 'marketCap');
+    // setVerticalBarText('#marketcapchart', companies, 'marketCap');
   }
 }
 
@@ -200,11 +188,11 @@ function updateEmployeeChart(companies) {
   if (companies.length == 0) {
     resetTitle('#employeechart');
     resetChart('#employeechart');
-    resetChartText('#employeechart');
+    // resetChartText('#employeechart');
   } else {
-    setTitle('#employeechart', 'Employees');
-    setVerticalBars('#employeechart', companies, 3, 'employees');
-    setVerticalBarText('#employeechart', companies, 'employees');
+    setTitle('#employeechart', 'Population');
+    setVerticalBars('#employeechart', companies, 1, 'employees');
+    // setVerticalBarText('#employeechart', companies, 'employees');
   }
 }
 
@@ -213,11 +201,11 @@ function updateGrowthChart(companies) {
   if (companies.length == 0) {
     resetTitle('#growthchart');
     resetChart('#growthchart');
-    resetChartText('#growthchart');
+    // resetChartText('#growthchart');
   } else {
-    setTitle('#growthchart', 'Sales Growth Rate for 3 years (%)');
+    setTitle('#growthchart', 'Rainfall Month (mm)');
     setVerticalBars('#growthchart', companies, 0.0002, 'salesGrowth');
-    setVerticalBarText('#growthchart', companies, 'salesGrowth');
+    // setVerticalBarText('#growthchart', companies, 'salesGrowth');
   }
 }
 
@@ -269,7 +257,7 @@ function setVerticalBars(seln, companies, factor, parameter) {
 }
 
 // set vertical bar text
-function setVerticalBarText(seln, companies, parameter) {
+function setVerticalBarText(seln, companies) {
   d3.select(seln)
     .select('svg')
     .selectAll('text')
